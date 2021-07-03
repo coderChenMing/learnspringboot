@@ -11,7 +11,10 @@ package com.learnspringboot.mapper;/*
 import com.learnspringboot.domain.Users;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UsersMapper {
     void insertUser(Users users);
+    List<Users> selectUsersAll();
 }

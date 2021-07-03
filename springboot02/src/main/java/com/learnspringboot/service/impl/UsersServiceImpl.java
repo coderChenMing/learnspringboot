@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class UsersServiceImpl implements UsersService {
@@ -23,5 +25,10 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public void addUser(Users users) {
         usersMapper.insertUser(users);
+    }
+
+    @Override
+    public List<Users> findUserAll() {
+        return usersMapper.selectUsersAll();
     }
 }

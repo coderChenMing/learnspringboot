@@ -4,5 +4,9 @@
     <insert id="insertUser" parameterType="users">
         insert into users(name,age )values(#{name},#{age});
     </insert>
+    <select id="selectUsersAll" resultType="users">
+        select id,name,age from users;
+    </select>
+
 
 </mapper>

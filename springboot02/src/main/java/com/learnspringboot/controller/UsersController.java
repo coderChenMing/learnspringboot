@@ -12,8 +12,11 @@ import com.learnspringboot.domain.Users;
 import com.learnspringboot.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/users")
@@ -31,4 +34,11 @@ public class UsersController {
         usersService.addUser(users);
         return "success";
     }
+    @RequestMapping("/findUsersAll")
+    public String findAll(Model model) {
+        List<Users> users = usersService.findUserAll();
+        model.addAttribute("users", users);
+        return "allUsers";
+    }
+
 }

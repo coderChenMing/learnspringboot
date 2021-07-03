@@ -10,6 +10,10 @@ package com.learnspringboot.service;/*
 
 import com.learnspringboot.domain.Users;
 
+import java.util.List;
+
 public interface UsersService {
     void addUser(Users users);
+
+    List<Users> findUserAll();
 }
