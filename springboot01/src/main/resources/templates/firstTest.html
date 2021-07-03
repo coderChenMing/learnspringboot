@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>First Test Thymeleaf</title>
+</head>
+<body>
+<span th:text="hellothymeleaf"></span>
+<hr>
+<span th:text="${msg}"></span>
+<hr>
+<input type="text" name="username" th:value="${msg}">
+<hr>
+<!--判断内容是否为空-->
+<span th:text="${#strings.isEmpty(msg)}"></span>
+<hr>
+<!--判断内容是否含有-->
+<span th:text="${#strings.contains(msg,'first')}"></span>
+<hr>
+<span th:text="${#strings.startsWith(msg,'thymeleaf')}"></span>
+<hr>
+<span th:text="${#strings.endsWith(msg,'thymeleaf')}"></span>
+<hr>
+<span th:text="${#strings.length(msg)}"></span>
+<hr>
+<span th:text="${#strings.indexOf(msg,'h')}"></span>
+<hr>
+<span th:text="${#strings.substring(msg,2)}"></span>
+<hr>
+<span th:text="${#strings.toUpperCase(msg)}"></span>
+<hr>
+<span th:text="${#dates.format(today)}"></span>
+<hr>
+<span th:text="${#dates.format(today,'yyyy/MM/dd')}"></span>
+<hr>
+<span th:text="${#dates.year(today)}"></span>
+<hr>
+<span th:text="${#dates.month(today)}"></span>
+<hr>
+
+</body>
+</html>

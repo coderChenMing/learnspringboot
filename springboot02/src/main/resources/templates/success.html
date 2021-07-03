@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作结果提示页</title>
+</head>
+<body>
+<h3 id="show" style="color: red">操作成功</h3>
+<script>
+    var t = 5;/*设置跳转时间*/
+    function Redirect() {
+        document.getElementById("show").innerHTML = "<h3 style='color: green'>" + t + "秒后跳转至添加用户界面" + "</h3>";
+        if (t == 0) {
+            window.location = "http://localhost:8083/users/input";   //要跳转的页面
+        }
+        t--;
+    }
+    setInterval('Redirect()', 1000);       //一秒触发一次
+</script>
+</body>
+</html>

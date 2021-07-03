@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<span th:if="${gender}== 'male'">
+    性别:男
+</span><span th:if="${gender}== 'female'">
+    性别:女
+</span>
+<div th:switch="${number}">
+    <span th:case="1">number==1</span>
+    <span th:case="2">number==2</span>
+    <span th:case="3">number==3</span>
+    <span th:case="4">number==4</span>
+</div>
+</body>
+</html>

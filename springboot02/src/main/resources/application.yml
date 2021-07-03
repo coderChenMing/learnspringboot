@@ -1,0 +1,33 @@
+#普通数据配置#
+name: zhangsan
+#对象配置#
+person:
+  name: zhangsan
+  age: 20
+#行内对象配置
+#student1: {name: lisi,age: 30,addr: beijing}
+server:
+ port: 8083
+
+#配置集合和数组#
+city:
+  - beijing
+  - nanjing
+  - shanghai
+provice: [beijing,nanjing,shanghai]
+#配置数组对象#
+student:
+  - name: zhangsan
+    age: 20
+    addr: nanjing
+  - name: lisi
+    age: 50
+    adder: shenzhen
+
+studentlist: [{name: zhangsan,age: 20,addr: beijing},{name: liuda,age: 30,addr: shanghai}]
+student1:
+  name: lisi
+  age: 50
+  addr: shanghai
+
+
