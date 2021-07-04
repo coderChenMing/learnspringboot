@@ -1,7 +1,9 @@
 package com.learnspringboot;
 
-import com.learnspringboot.mapper.ItemsMapper;
 import com.learnspringboot.domain.Items;
+import com.learnspringboot.domain.Users;
+import com.learnspringboot.mapper.ItemsMapper;
+import com.learnspringboot.mapper.UsersMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +23,17 @@ public class MyTest {
 
     @Autowired
     private ItemsMapper itemsMapper;
-
+    @Autowired
+    private UsersMapper usersMapper;
     @Test
-    public void testFindAll() {
+    public void testFindAllItems() {
         List<Items> all = itemsMapper.findAll();
         System.out.println(all);
+    }
+    @Test
+    public void testFindAllUsers() {
+        List<Users> users = usersMapper.selectUsersAll();
+        System.out.println(users);
     }
 
 }
