@@ -13,9 +13,12 @@ import com.learnspringboot.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -23,15 +26,29 @@ import java.util.List;
 public class UsersController {
     @Autowired
     private UsersService usersService;
-    /**映射静态资源*/
+    /**映射静态资源
+     * users参数会放到model中传递Users对象，且参数必须驼峰命名
+     * 可以通过ModelAttribute注解修改参数映射名
+     * eg:@ModelAttribute("abc")  Users users
+     * 如果改成这样，则thymeleaf对应的html中获取对象的key时也要￥{abc.key}
+     *
+     *
+     *
+     * */
     @RequestMapping("/{page}")
-    public String showPage(@PathVariable String page) {
+    public String showPage(@PathVariable String page,@ModelAttribute("abc")  Users users) {
 
         return page;
     }
-    /**添加用户*/
+    /**添加用户
+     * @Valid开启对users对象的校验
+     * result：校验结果
+     * */
     @RequestMapping("/addUser")
-    public String addUser(Users users) {
+    public String addUser(@ModelAttribute("abc") @Valid Users users, BindingResult result) {
+        if(result.hasErrors()){
+            return "input";
+        }
         usersService.addUser(users);
         return "success";
     }

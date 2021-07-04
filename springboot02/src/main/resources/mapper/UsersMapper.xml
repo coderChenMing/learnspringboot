@@ -3,15 +3,15 @@
 <mapper namespace="com.learnspringboot.mapper.UsersMapper">
     <!--新增-->
     <insert id="insertUser" parameterType="users">
-        insert into users(name,age )values(#{name},#{age});
+        insert into users(name,age,password,email)values(#{name},#{age},#{password},#{email});
     </insert>
     <!--查询列表-->
     <select id="selectUsersAll" resultType="users">
-        select id,name,age from users;
+        select id,name,age,email from users;
     </select>
     <!--查询单个用户-->
     <select id="selectUsersById" resultType="users">
-        select id,name,age from users where id =#{value};
+        select id,name,age,email from users where id =#{value};
     </select>
     <!--更新用户-->
     <update id="updateUser" parameterType="users">
