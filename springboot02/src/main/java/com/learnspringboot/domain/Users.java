@@ -8,11 +8,13 @@ package com.learnspringboot.domain;/*
  * @version
  */
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
+
 /**
  * @NotBlank：判断字符串是否为null/空串，会去掉两端空格
  * @NotEmpty:判断字符串是否为null/空串，不会去掉两端空格，意味着输入空格也能通过校验
@@ -20,7 +22,7 @@ import javax.validation.constraints.NotBlank;
  * @Min:判断数值最小值
  * @Max:判断数值最大值
  * */
-public class Users {
+public class Users implements Serializable {
     private Integer id;
     @Min(18)
     private Integer age;

@@ -51,7 +51,8 @@ public class PersonCacheTest {
     @Test
     public void testPage() {
         // 查询
-        Pageable pageable =  PageRequest.of(0,15);
+       // Pageable pageable =  PageRequest.of(0,15); springboot2.x使用这种方式
+        Pageable pageable =  new PageRequest(0,15);
         Page<Person> page = personService.findPersonByPage(pageable);
         List<Person> content = page.getContent();
         for (Person person : content) {
@@ -61,7 +62,7 @@ public class PersonCacheTest {
         Person person1 = new Person("贾宝玉2", 19, "金陵贾府2");
         personService.savePerson(person1);
         // 再查询
-        Pageable pageable2 =  PageRequest.of(0,15);
+        Pageable pageable2 =  new PageRequest(0,15);
         Page<Person> page2 = personService.findPersonByPage(pageable2);
         List<Person> content2 = page2.getContent();
         for (Person person : content2) {

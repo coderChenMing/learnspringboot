@@ -32,7 +32,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     @Cacheable(value="person")
     public Person findPersonById(Integer id) {
-        return personRepository.findById(id).get();//springboot2.x之后不再支持findOne()
+        return personRepository.findOne(id);//springboot2.x之后不再支持findOne()
     }
 
     @Override

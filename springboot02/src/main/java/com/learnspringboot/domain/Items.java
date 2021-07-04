@@ -1,5 +1,6 @@
 package com.learnspringboot.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  * @create 2021-03-22-11:12
  * @description 实体类
  */
-public class Items {
+public class Items  implements Serializable {
 
     private Integer id;
     private String name ;
