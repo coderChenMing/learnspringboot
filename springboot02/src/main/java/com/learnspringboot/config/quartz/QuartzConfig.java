@@ -11,9 +11,9 @@ package com.learnspringboot.config.quartz;/*
 import com.learnspringboot.quartz.FirstJob;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
-import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
 @Configuration
 public class QuartzConfig {
@@ -30,7 +30,7 @@ public class QuartzConfig {
     /**
      * 2.创建trigger
      */
-    @Bean
+   /* @Bean
     public SimpleTriggerFactoryBean getTrigger(JobDetailFactoryBean factoryBean) {
         SimpleTriggerFactoryBean triggerFactoryBean = new SimpleTriggerFactoryBean();
         // 关联Job对象
@@ -40,13 +40,34 @@ public class QuartzConfig {
         // 设置重复次数
         triggerFactoryBean.setRepeatCount(4);
         return triggerFactoryBean;
-    }
+    }*/
 
     /**
      * 3.创建scheduler
      */
-    @Bean
+   /* @Bean
     public SchedulerFactoryBean getSchedulerFactoryBean(SimpleTriggerFactoryBean triggerFactoryBean) {
+        SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
+        factoryBean.setTriggers(triggerFactoryBean.getObject());
+        return factoryBean;
+    }*/
+
+    /**
+     * 2.创建cron trigger
+     */
+    @Bean
+    public CronTriggerFactoryBean getCronTrigger(JobDetailFactoryBean factoryBean) {
+        CronTriggerFactoryBean factory = new CronTriggerFactoryBean();
+        factory.setJobDetail(factoryBean.getObject());
+        factory.setCronExpression("5,6 * * * * ?");
+        return factory;
+    }
+
+    /**
+     * 3.创建cron scheduler
+     */
+    @Bean
+    public SchedulerFactoryBean getSchedulerFactoryBean(CronTriggerFactoryBean triggerFactoryBean) {
         SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
         factoryBean.setTriggers(triggerFactoryBean.getObject());
         return factoryBean;
