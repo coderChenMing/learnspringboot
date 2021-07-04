@@ -15,6 +15,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -25,11 +26,17 @@ public class UsersRedisTest {
     private RedisTemplate<String, Object> redisTemplate;
     @Autowired
     private UsersService usersService;
-
+    /*redis设置与获取测试*/
     @Test
     public void testRedisSet() {
         redisTemplate.opsForValue().set("name","张三");
     }
+    @Test
+    public void testRedisGet() {
+        String name = (String) redisTemplate.opsForValue().get("name");
+        System.out.println(name);
+    }
+    /*redis设置与获取user对象,使用Jdk序列化器测试*/
     @Test
     public void testRedisSetUser() {
         Users user = usersService.findUsersById(2);
@@ -44,10 +51,20 @@ public class UsersRedisTest {
         Object o = redisTemplate.opsForValue().get("user");
         System.out.println(o);
     }
+    /*redis设置与获取user对象,使用jackson序列化器测试*/
     @Test
-    public void testRedisGet() {
-        String name = (String) redisTemplate.opsForValue().get("name");
-        System.out.println(name);
+    public void JsonUserSet() {
+        Users user = usersService.findUsersById(12);
+        // User对象不是字符串，需要重新设置序列化器
+        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(Users.class));
+        redisTemplate.opsForValue().set("12",user);
+    }
+    @Test
+    public void JsonUserGet() {
+        // User对象不是字符串，需要重新设置序列化器
+        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer(Users.class));
+        Object o = redisTemplate.opsForValue().get("12");
+        System.out.println(o);
     }
     @Test
     public void TestFindById() {
