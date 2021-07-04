@@ -18,11 +18,15 @@
         <th>用户ID</th>
         <th>用户姓名</th>
         <th>用户年龄</th>
+        <th>更新</th>
+        <th>删除</th>
     </tr>
     <tr th:each="user : ${users}">
         <td th:text="${user.id}"></td>
         <td th:text="${user.name}"></td>
         <td th:text="${user.age}"></td>
+        <td><a th:href="@{/users/findUsersById(id=${user.id})}">更新用户</a></td>
+        <td><a th:href="@{/users/deleteUsersById(id=${user.id})}">删除用户</a></td>
     </tr>
 
 

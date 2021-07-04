@@ -16,4 +16,10 @@ public interface UsersService {
     void addUser(Users users);
 
     List<Users> findUserAll();
+
+    Users findUsersById(Integer id);
+
+    void updateUser(Users users);
+
+    void deleteUsersById(Integer id);
 }

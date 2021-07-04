@@ -23,22 +23,42 @@ import java.util.List;
 public class UsersController {
     @Autowired
     private UsersService usersService;
-
+    /**映射静态资源*/
     @RequestMapping("/{page}")
     public String showPage(@PathVariable String page) {
 
         return page;
     }
+    /**添加用户*/
     @RequestMapping("/addUser")
     public String addUser(Users users) {
         usersService.addUser(users);
         return "success";
     }
+    /**查询用户列表*/
     @RequestMapping("/findUsersAll")
     public String findAll(Model model) {
         List<Users> users = usersService.findUserAll();
         model.addAttribute("users", users);
         return "allUsers";
     }
-
+    /**查询单个用户*/
+    @RequestMapping("/findUsersById")
+    public String findUsersById(Integer id, Model model) {
+        Users users = usersService.findUsersById(id);
+        model.addAttribute("user", users);
+        return "updateUser";
+    }
+    /**更新用户*/
+    @RequestMapping("/updateUser")
+    public String updateUser(Users users, Model model) {
+        usersService.updateUser(users);
+        return "success";
+    }
+    /**删除用户*/
+    @RequestMapping("/deleteUsersById")
+    public String deleteUsersById(Integer id) {
+        usersService.deleteUsersById(id);
+        return "redirect:/users/findUsersAll";
+    }
 }

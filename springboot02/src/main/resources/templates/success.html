@@ -9,9 +9,9 @@
 <script>
     var t = 5;/*设置跳转时间*/
     function Redirect() {
-        document.getElementById("show").innerHTML = "<h3 style='color: green'>" + t + "秒后跳转至添加用户界面" + "</h3>";
+        document.getElementById("show").innerHTML = "<h3 style='color: green'>" + t + "秒后跳转至用户列表界面" + "</h3>";
         if (t == 0) {
-            window.location = "http://localhost:8083/users/input";   //要跳转的页面
+            window.location = "http://localhost:8083/users/findUsersAll";   //要跳转的页面
         }
         t--;
     }
