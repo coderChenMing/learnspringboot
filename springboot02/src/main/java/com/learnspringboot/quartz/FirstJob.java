@@ -8,15 +8,22 @@ package com.learnspringboot.quartz;/*
  * @version 1.0.0
  */
 
+import com.learnspringboot.domain.Users;
+import com.learnspringboot.service.UsersService;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.List;
 
 public class FirstJob implements Job {
+    @Autowired
+    private UsersService usersService;
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        System.out.println("First Job"+new Date());
+        List<Users> users = usersService.findUserAll();
+        System.out.println(""+new Date()+" "+users);
     }
 }
