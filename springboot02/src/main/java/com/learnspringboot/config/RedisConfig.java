@@ -54,6 +54,7 @@ public class RedisConfig {
     public RedisTemplate<String, Object> getRedisTemplate(JedisConnectionFactory factory) {
 
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        //设置序列化器
         StringRedisSerializer serializer=new StringRedisSerializer();
         redisTemplate.setConnectionFactory(factory);
         // 为Key设置序列化器
