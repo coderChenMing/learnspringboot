@@ -35,6 +35,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    @Cacheable(value = "person",key = "#pageable.pageSize")
     public Page<Person> findPersonByPage(Pageable pageable) {
         return personRepository.findAll(pageable);
     }

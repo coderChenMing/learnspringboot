@@ -14,6 +14,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -43,6 +46,22 @@ public class PersonCacheTest {
             System.out.println(person);
         }
 
+    }
+
+    @Test
+    public void testPage() {
+        Pageable pageable =  PageRequest.of(0,3);
+        Pageable pageable2 =  PageRequest.of(0,12);
+        Page<Person> page = personService.findPersonByPage(pageable);
+        Page<Person> page2 = personService.findPersonByPage(pageable2);
+        List<Person> content = page.getContent();
+        for (Person person : content) {
+            System.out.println(person);
+        }
+        List<Person> content2 = page2.getContent();
+        for (Person person : content2) {
+            System.out.println(person);
+        }
     }
 
 }
