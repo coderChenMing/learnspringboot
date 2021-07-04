@@ -1,4 +1,4 @@
-package com.learnspringboot.config;/*
+package com.learnspringboot.config.exception;/*
  * Project: springboot03
  * File Created at 2021-07-04 13:54:13:54
  * @Type GlobalExceptionHandler.java

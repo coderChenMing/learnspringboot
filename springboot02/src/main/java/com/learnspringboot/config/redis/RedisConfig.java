@@ -1,4 +1,4 @@
-package com.learnspringboot.config;/*
+package com.learnspringboot.config.redis;/*
  * Project: springboot03
  * File Created at 2021-07-04 17:26:17:26
  * @Type RedisConfig.java

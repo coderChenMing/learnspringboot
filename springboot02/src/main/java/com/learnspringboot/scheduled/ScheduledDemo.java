@@ -32,10 +32,9 @@ public class ScheduledDemo {
      * 年：。。。
      * 其中日和月要联合起来定义范围的合理性
      * 设置周时也要和日月时也要观察范围的合理性
-     *
      */
     //@Scheduled(cron = "2/10 * * * * ?")
     public void executeMethod() {
-        System.out.println("定时器出发了"+new Date());
+        System.out.println("定时器出发了" + new Date());
     }
 }
