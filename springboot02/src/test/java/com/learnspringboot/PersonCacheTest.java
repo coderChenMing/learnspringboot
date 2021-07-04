@@ -50,14 +50,19 @@ public class PersonCacheTest {
 
     @Test
     public void testPage() {
-        Pageable pageable =  PageRequest.of(0,3);
-        Pageable pageable2 =  PageRequest.of(0,12);
+        // 查询
+        Pageable pageable =  PageRequest.of(0,15);
         Page<Person> page = personService.findPersonByPage(pageable);
-        Page<Person> page2 = personService.findPersonByPage(pageable2);
         List<Person> content = page.getContent();
         for (Person person : content) {
             System.out.println(person);
         }
+        // 插入
+        Person person1 = new Person("贾宝玉2", 19, "金陵贾府2");
+        personService.savePerson(person1);
+        // 再查询
+        Pageable pageable2 =  PageRequest.of(0,15);
+        Page<Person> page2 = personService.findPersonByPage(pageable2);
         List<Person> content2 = page2.getContent();
         for (Person person : content2) {
             System.out.println(person);

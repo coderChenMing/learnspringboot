@@ -12,6 +12,7 @@ import com.learnspringboot.dao.PersonRepository;
 import com.learnspringboot.domain.Person;
 import com.learnspringboot.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -41,6 +42,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    @CacheEvict(value = "person",allEntries=true)
     public void savePerson(Person person) {
         personRepository.save(person);
     }
