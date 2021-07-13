@@ -3,7 +3,7 @@ package com.learnspringboot.config.redis;/*
  * File Created at 2021-07-04 17:26:17:26
  * @Type RedisConfig.java
  * @Desc redis配置,springboot2.x 不再使用jedis,而是Lettuce(netty)
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/4 0004 17:26
  * @version 1.0.0
  */

@@ -3,7 +3,7 @@ package com.learnspringboot.domain;/*
  * File Created at 2021-07-04 15:32:15:32
  * @Type Person.java
  * @Desc ehcache支持磁盘序列化缓存，所以person要实现序列化接口，否则报错
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/4 0004 15:32
  * @version 1.0.0
  */

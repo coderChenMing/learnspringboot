@@ -3,7 +3,7 @@ package com.learnspringboot.check.anno;/*
  * File Created at 2021-07-07 21:33:21:33
  * @Type IntegerCheck.java
  * @Desc
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/7 0007 21:33
  * @version 1.0.0
  */

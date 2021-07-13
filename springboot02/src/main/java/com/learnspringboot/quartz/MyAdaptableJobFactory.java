@@ -3,7 +3,7 @@ package com.learnspringboot.quartz;/*
  * File Created at 2021-07-04 22:06:22:06
  * @Type MyAdaptableJobFactory.java
  * @Desc
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/4 0004 22:06
  * @version 1.0.0
  */

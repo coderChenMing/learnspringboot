@@ -3,7 +3,7 @@ package com.learnspringboot.quartz;/*
  * File Created at 2021-07-04 21:28:21:28
  * @Type FirstJob.java
  * @Desc  定义job类
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/4 0004 21:28
  * @version 1.0.0
  */

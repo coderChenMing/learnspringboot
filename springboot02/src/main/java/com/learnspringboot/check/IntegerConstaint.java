@@ -3,7 +3,7 @@ package com.learnspringboot.check;/*
  * File Created at 2021-07-07 21:43:21:43
  * @Type IntegerConstaint.java
  * @Desc
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/7 0007 21:43
  * @version 1.0.0
  */

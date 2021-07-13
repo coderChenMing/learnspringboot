@@ -3,7 +3,7 @@ package com.learnspringboot.config.exception;/*
  * File Created at 2021-07-04 14:18:14:18
  * @Type DefineGlobalExceptionHandler.java
  * @Desc   自定义异常处理最优
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/4 0004 14:18
  * @version 1.0.0
  */

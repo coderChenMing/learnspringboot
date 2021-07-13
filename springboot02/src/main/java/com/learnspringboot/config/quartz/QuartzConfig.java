@@ -3,7 +3,7 @@ package com.learnspringboot.config.quartz;/*
  * File Created at 2021-07-04 21:31:21:31
  * @Type QuartzConfig.java
  * @Desc
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/4 0004 21:31
  * @version 1.0.0
  */

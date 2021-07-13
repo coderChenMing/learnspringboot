@@ -3,7 +3,7 @@ package com.learnspringboot.scheduled;/*
  * File Created at 2021-07-04 20:27:20:27
  * @Type ScheduledDemo.java
  * @Desc spring3.0出现的定时scheduled
- * @author <a href="mailto:chenming1@eversec.cn">chenming</a>
+ * @author <a href="mailto: ">chenming</a>
  * @date 2021/7/4 0004 20:27
  * @version 1.0.0
  */
