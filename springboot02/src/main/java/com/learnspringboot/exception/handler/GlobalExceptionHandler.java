@@ -8,9 +8,18 @@ package com.learnspringboot.exception.handler;/*
  * @version
  */
 
+import com.learnspringboot.response.Response;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.ValidationException;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -31,5 +40,21 @@ public class GlobalExceptionHandler {
         view.addObject("error", e.toString());
         view.setViewName("nullPointer");
         return view;
+    }
+    @ExceptionHandler(value = {javax.validation.ConstraintViolationException.class})
+    @ResponseBody
+    public String handValidationException(ConstraintViolationException e) {
+        Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
+        List<String> collect = constraintViolations.stream()
+                .map(o -> o.getMessage())
+                .collect(Collectors.toList());
+        Response respons = new Response(collect);
+        return respons.getJsonBody();
+    }
+    @ResponseBody
+    @ExceptionHandler(value = javax.validation.ValidationException.class)
+    public String validationExceptionHandler(ValidationException ex){
+        Response respons = new Response(ex.getMessage());
+        return respons.getJsonBody();
     }
 }

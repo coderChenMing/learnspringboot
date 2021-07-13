@@ -10,18 +10,16 @@ package com.learnspringboot.config.quartz;/*
 
 import com.learnspringboot.quartz.FirstJob;
 import com.learnspringboot.quartz.MyAdaptableJobFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
-@Configuration
+//@Configuration
 public class QuartzConfig {
     /**
      * 1.创建Job
      */
-    @Bean
+    //@Bean
     public JobDetailFactoryBean getJobDetail() {
         JobDetailFactoryBean factoryBean = new JobDetailFactoryBean();
         // FirstJob交给AdaptableJobFactory通过反射的方式实例化，没有交给spring ioc容器管理
@@ -57,7 +55,7 @@ public class QuartzConfig {
     /**
      * 2.创建cron trigger
      */
-    @Bean
+    //@Bean
     public CronTriggerFactoryBean getCronTrigger(JobDetailFactoryBean factoryBean) {
         CronTriggerFactoryBean factory = new CronTriggerFactoryBean();
         factory.setJobDetail(factoryBean.getObject());
@@ -68,7 +66,7 @@ public class QuartzConfig {
     /**
      * 3.创建cron scheduler
      */
-    @Bean
+    //@Bean
     public SchedulerFactoryBean getSchedulerFactoryBean(CronTriggerFactoryBean triggerFactoryBean, MyAdaptableJobFactory myAdaptableJobFactory) {
         SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
         factoryBean.setTriggers(triggerFactoryBean.getObject());
