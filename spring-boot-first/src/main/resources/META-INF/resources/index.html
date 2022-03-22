@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome page</title>
+</head>
+<body>
+    <h1>Welcome To Springboot 2.3.4</h1>
+    <form action="user" method="get">
+        <input type="submit" value="rest-get">
+    </form>
+    <form action="user" method="post">
+        <input type="submit" value="rest-post">
+    </form>
+    <form action="user" method="post">
+        <input name="rest_method" type="hidden" value="put">
+        <input type="submit" value="rest-put">
+    </form>
+    <form action="user" method="post">
+        <input name="rest_method" type="hidden" value="delete">
+        <input type="submit" value="rest-delete">
+    </form>
+    <hr>
+    <form action="saveClass" method="post">
+        姓名:<input name="name" value="高三二班"><br/>
+        年龄:<input name="count" value="66"><br/>
+        生日:<input name="date" value="2007/07/18"><br/>
+        宠物姓名:<input name="student.name" value="老王"><br/>
+        宠物年龄:<input name="student.age" value="18"><br/>
+        <input type="submit" value="保存">
+    </form>
+</body>
+</html>

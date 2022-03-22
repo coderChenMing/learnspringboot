@@ -1,0 +1,36 @@
+person:
+  #username: 张三
+  # username: '张三 \n 李四'
+  username: "张三 \n 李四"
+  # 双引号不会转义,""会换行,单引号会转义,''不会换行,
+  boss: true
+  birth: 1991/12/12
+  age: 30
+ # interests: [篮球,足球]
+  interests:
+    - 篮球
+    - 足球
+    - 乒乓球
+  animal: [小猫,小狗,小猪]
+ # score: {语文:99,数学:88}
+  score:
+    chinese: 99
+    math: 88
+  salarys:
+    - 8888
+    - 7777.8
+ # allPets: {scream:[小猪,小狗],fly:[麻雀,喜鹊]}
+  allPets:
+    scream:
+      - name: 小猪
+        weight: 20
+      - name: 小狗
+        weight: 30
+    fly:
+      - name: 麻雀
+        weight: 0.8
+      - name: 喜鹊
+        weight: 0.9
+  pet:
+    name: peggy
+    weight: 30.0
