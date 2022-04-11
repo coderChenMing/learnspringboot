@@ -12,12 +12,6 @@ import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @program: csvd-parent
- * @description: 导出word
- * @author: Qin shanliang
- * @create: 2020-01-09 11:03
- */
 @Configuration
 public class ReceiptWordUtil {
 
