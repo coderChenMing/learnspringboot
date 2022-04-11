@@ -99,7 +99,7 @@ public class MyConfig implements WebMvcConfigurer {
         RequestInteceptor inteceptor = new RequestInteceptor();
         registry.addInterceptor(inteceptor)
         .addPathPatterns("/**")//拦截所有请求
-        .excludePathPatterns(Arrays.asList("/","/login","/error","/css/**","/js/**","/images/**"))//放行请求列表:指定路径和静态资源
+        .excludePathPatterns(Arrays.asList("/","/word","/login","/error","/css/**","/js/**","/images/**"))//放行请求列表:指定路径和静态资源
         ;
     }
 
