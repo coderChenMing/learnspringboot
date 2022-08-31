@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.configOrder.A_SonConfig,com.configOrder.B_ParentConfig
