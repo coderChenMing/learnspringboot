@@ -1,12 +1,10 @@
 package com.learn.boot.config;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Project: spring-boot-first
@@ -27,7 +25,7 @@ import javax.servlet.http.HttpSession;
 public class RequestInteceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.info("preHandle execute....");
+        /*log.info("preHandle execute....");
         log.info("当前拦截请求:"+request.getRequestURI());
         HttpSession session = request.getSession();
         if (session.getAttribute("user") != null) {
@@ -35,8 +33,8 @@ public class RequestInteceptor implements HandlerInterceptor {
         }
         request.setAttribute("msg","请先登录");
         // 重定向到未登录页
-        request.getRequestDispatcher("/").forward(request,response);
-        return false;//拦截
+        request.getRequestDispatcher("/").forward(request,response);*/
+        return true;//拦截
     }
 
     @Override

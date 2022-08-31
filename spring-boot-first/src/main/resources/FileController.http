@@ -1,0 +1,9 @@
+POST http://localhost:8888/param4?address='北京'
+Content-Type: application/json
+
+{
+  "name":"张三",
+  "age":"11"
+}
+
+###
